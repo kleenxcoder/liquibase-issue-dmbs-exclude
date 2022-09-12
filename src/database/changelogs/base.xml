@@ -13,4 +13,28 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="kleenxcoder" id="20220909-1" dbms="!oracle" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="NON_ORACLE">
+            <column name="ID" type="NUMBER(10, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="NON_ORACLE_PK"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(32 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR2(255 BYTE)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="kleenxcoder" id="20220909-1" dbms="!h2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="NON_H2">
+            <column name="ID" type="NUMBER(10, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="NON_H2_PK"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(32 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR2(255 BYTE)"/>
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
