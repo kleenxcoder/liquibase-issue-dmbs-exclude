@@ -1,7 +1,55 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
-    <changeSet author="kleenxcoder" id="20220909-1" dbms="!mssql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <changeSet author="kleenxcoder" id="20220909-0" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="EVERYWHERE">
+            <column name="ID" type="NUMBER(10, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="EVERYWHERE"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(32 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR2(255 BYTE)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="kleenxcoder" id="20220909-1" dbms="h2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="H2_ONLY">
+            <column name="ID" type="NUMBER(10, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="H2_ONLY_PK"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(32 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR2(255 BYTE)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="kleenxcoder" id="20220909-2" dbms="oracle" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="ORACLE_ONLY">
+            <column name="ID" type="NUMBER(10, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="ORACLE_ONLY_PK"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(32 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR2(255 BYTE)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="kleenxcoder" id="20220909-3" dbms="mssql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="MSSQL_ONLY">
+            <column name="ID" type="NUMBER(10, 0)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="MSSQL_ONLY_PK"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(32 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR2(255 BYTE)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="kleenxcoder" id="20220909-4" dbms="!mssql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <createTable tableName="NON_MSSQL">
             <column name="ID" type="NUMBER(10, 0)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="NON_MSSQL_PK"/>
@@ -13,7 +61,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="kleenxcoder" id="20220909-1" dbms="!oracle" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <changeSet author="kleenxcoder" id="20220909-5" dbms="!oracle" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <createTable tableName="NON_ORACLE">
             <column name="ID" type="NUMBER(10, 0)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="NON_ORACLE_PK"/>
@@ -25,7 +73,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="kleenxcoder" id="20220909-1" dbms="!h2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+    <changeSet author="kleenxcoder" id="20220909-6" dbms="!h2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <createTable tableName="NON_H2">
             <column name="ID" type="NUMBER(10, 0)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="NON_H2_PK"/>
